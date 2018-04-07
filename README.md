@@ -14,5 +14,7 @@ Chef Cookbook for applying CIS Benchmark settings to Windows 10 systems
 
 ## License and Author
 Author:: Jesse Boyce (<jesse@jpboyce.org>)
+
 Copyright:: 2018, Jesse Boyce
+
 License:: MIT
