@@ -11,7 +11,7 @@ end
 
 # 17.3.2 (L1) Ensure 'Audit Process Creation' is set to 'Success'
 # AuditPol execute block
-execute 'name' do
+execute 'Process Creation' do
   command 'auditpol /set /subcategory:"Process Creation" /success:enable /failure:disable'
   action :run
 end

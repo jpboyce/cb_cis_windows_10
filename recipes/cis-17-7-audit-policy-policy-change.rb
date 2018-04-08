@@ -2,21 +2,21 @@
 
 # 17.7.1 (L1) Ensure 'Audit Audit Policy Change' is set to 'Success and Failure'
 # AuditPol execute block
-execute 'name' do
+execute 'Audit Policy Change' do
   command 'auditpol /set /subcategory:"Audit Policy Change" /success:enable /failure:enable'
   action :run
 end
 
 # 17.7.2 (L1) Ensure 'Audit Authentication Policy Change' is set to 'Success'
 # AuditPol execute block
-execute 'name' do
+execute 'Authentication Policy Change' do
   command 'auditpol /set /subcategory:"Authentication Policy Change" /success:enable /failure:disable'
   action :run
 end
 
 # 17.7.3 (L1) Ensure 'Audit Authorization Policy Change' is set to 'Success'
 # AuditPol execute block
-execute 'name' do
+execute 'Authorization Policy Change' do
   command 'auditpol /set /subcategory:"Authorization Policy Change" /success:enable /failure:disable'
   action :run
 end
