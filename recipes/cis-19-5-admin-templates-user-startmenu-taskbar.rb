@@ -2,11 +2,11 @@
 
 # Ensure 'Turn off toast notifications on the lock screen' is set to 'Enabled'
 registry_key 'HKEY_USERS\.DEFAULT\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications' do
-   values [{
-     name: 'NoToastApplicationNotificationOnLockScreen',
-     type: :dword,
-     data: 1,
-   }]
-   action :create
-   recursive true
+  values [{
+    name: 'NoToastApplicationNotificationOnLockScreen',
+    type: :dword,
+    data: 1,
+  }]
+  action :create
+  recursive true
 end

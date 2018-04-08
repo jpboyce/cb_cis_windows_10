@@ -2,22 +2,22 @@
 
 # Ensure 'Turn off multicast name resolution' is set to 'Enabled'
 registry_key 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient' do
-   values [{
-     name: 'EnableMulticast',
-     type: :dword,
-     data: 1,
-   }]
-   action :create
+  values [{
+    name: 'EnableMulticast',
+    type: :dword,
+    data: 1,
+  }]
+  action :create
 end
 
 # Set 'NetBIOS node type' to 'P-node' (Ensure NetBT Parameter 'NodeType' is set to '0x2 (2)')
 registry_key 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\NetBT\Parameters' do
-   values [{
-     name: 'NodeType',
-     type: :dword,
-     data: 1,
-   }]
-   action :create
+  values [{
+    name: 'NodeType',
+    type: :dword,
+    data: 1,
+  }]
+  action :create
 end
 
 # Ensure 'Enable Font Providers' is set to 'Disabled'
@@ -178,12 +178,12 @@ end
 # \:\\*\NETLOGON
 
 registry_key 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths' do
-   values [{
-     name: 'WarningLevel',
-     type: :dword,
-     data: 1,
-   }]
-   action :create
+  values [{
+    name: 'WarningLevel',
+    type: :dword,
+    data: 1,
+  }]
+  action :create
  end
 # \:\\*\SYSVOL
 =end

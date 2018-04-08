@@ -25,26 +25,26 @@
 # Set-NetFirewallProfile -Profile Private -LogBlocked True
 
 powershell_script 'PrivateProfile' do
-    code <<-EOH
-        Start-Transcript -Verbose
-        $settings = @{
-            'Name'='Private';
-            'Enabled'='True';
-            'DefaultInboundAction'='Block';
-            'DefaultOutBoundAction'='Allow';
-            'NotifyOnListen'='False';
-            'LogFileName'='C:\\Windows\\System32\\logfiles\\firewall\\privatefw.log';
-            'LogMaxSizeKilobytes'='20480';
-            'LogAllowed'='True';
-            'LogBlocked'='True'
-            }
+  code <<-EOH
+      Start-Transcript -Verbose
+      $settings = @{
+          'Name'='Private';
+          'Enabled'='True';
+          'DefaultInboundAction'='Block';
+          'DefaultOutBoundAction'='Allow';
+          'NotifyOnListen'='False';
+          'LogFileName'='C:\\Windows\\System32\\logfiles\\firewall\\privatefw.log';
+          'LogMaxSizeKilobytes'='20480';
+          'LogAllowed'='True';
+          'LogBlocked'='True'
+          }
 
-        $lines = ($settings | out-string) -split "`n"
-        foreach($line in $lines) {
-            write-warning $line
-        }
-        Set-NetFirewallProfile @settings -Verbose
+      $lines = ($settings | out-string) -split "`n"
+      foreach($line in $lines) {
+          write-warning $line
+      }
+      Set-NetFirewallProfile @settings -Verbose
 
-        Stop-Transcript -Verbose
-    EOH
+      Stop-Transcript -Verbose
+  EOH
 end

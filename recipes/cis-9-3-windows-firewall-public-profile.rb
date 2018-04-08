@@ -31,28 +31,28 @@
 # Set-NetFirewallProfile -Profile Public -LogBlocked True
 
 powershell_script 'PublicProfile' do
-    code <<-EOH
-        Start-Transcript -Verbose
-        $settings = @{
-            'Name'='Public';
-            'Enabled'='True';
-            'DefaultInboundAction'='Block';
-            'DefaultOutBoundAction'='Allow';
-            'NotifyOnListen'='False';
-            'AllowLocalFirewallRules'='False';
-            'AllowLocalIPsecRules'='False';
-            'LogFileName'='C:\\Windows\\System32\\logfiles\\firewall\\Publicfw.log';
-            'LogMaxSizeKilobytes'='20480';
-            'LogAllowed'='True';
-            'LogBlocked'='True'
-            }
+  code <<-EOH
+      Start-Transcript -Verbose
+      $settings = @{
+          'Name'='Public';
+          'Enabled'='True';
+          'DefaultInboundAction'='Block';
+          'DefaultOutBoundAction'='Allow';
+          'NotifyOnListen'='False';
+          'AllowLocalFirewallRules'='False';
+          'AllowLocalIPsecRules'='False';
+          'LogFileName'='C:\\Windows\\System32\\logfiles\\firewall\\Publicfw.log';
+          'LogMaxSizeKilobytes'='20480';
+          'LogAllowed'='True';
+          'LogBlocked'='True'
+          }
 
-        $lines = ($settings | out-string) -split "`n"
-        foreach($line in $lines) {
-            write-warning $line
-        }
-        Set-NetFirewallProfile @settings -Verbose
+      $lines = ($settings | out-string) -split "`n"
+      foreach($line in $lines) {
+          write-warning $line
+      }
+      Set-NetFirewallProfile @settings -Verbose
 
-        Stop-Transcript -Verbose
-    EOH
+      Stop-Transcript -Verbose
+  EOH
 end
