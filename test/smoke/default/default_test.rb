@@ -1,6 +1,6 @@
 # # encoding: utf-8
 
-# Inspec test for recipe cb-cis-windows-10::default
+# Inspec test for recipe cb_cis_windows_10::default
 
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/

@@ -1,12 +1,12 @@
 #
-# Cookbook:: cb-cis-windows-10
+# Cookbook:: cb_cis_windows_10
 # Spec:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'cb-cis-windows-10::default' do
+describe 'cb_cis_windows_10::default' do
   context 'When all attributes are default, on an Ubuntu 16.04' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:
